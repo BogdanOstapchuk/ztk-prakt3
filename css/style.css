@@ -1,0 +1,282 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+table {
+	margin: 0px auto;
+}
+td {
+	border: 0.1px solid rgba(255, 255, 255, 0.2);
+	padding: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+section {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #161623;
+	overflow: hidden;
+}
+section::before {
+	content: '';
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	background: linear-gradient(#ffc107, #e91e63);
+	border-radius: 50%;
+	transform: translate(-250px, -120px);
+}
+section::after {
+	content: '';
+	position: absolute;
+	width: 350px;
+	height: 350px;
+	background: linear-gradient(#2196f3, #31ff38);
+	border-radius: 50%;
+	transform: translate(250px, 150px);
+}
+.box {
+	z-index: 1000;
+}
+.container {
+	position: relative;
+	width: 400px;
+	min-height: 400px;
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+	border-right: 2px solid rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(25px);
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.container p {
+	font-family: 'Zen Dots', cursive;
+	font-weight: 700;
+	font-size: 20px;
+	color: rgb(255, 255, 255);
+}
+.container h2 {
+	font-family: 'Zen Dots', cursive;
+	color: rgba(255, 255, 255, 1);
+	margin-bottom: 45px;
+	line-height: 1em;
+	font-weight: 500;
+	padding-left: 10px;
+	border-left: 5px solid #2894ff;
+	font-size: 30px;
+}
+.inputBox {
+	position: relative;
+	width: 300px;
+	height: 46px;
+	margin-bottom: 25px;
+}
+.inputBox:last-child {
+	margin-bottom: 0px;
+}
+
+.inputBox input {
+	font-family: 'Zen Dots', cursive;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	border: 1px solid #111;
+	background: transparent;
+	padding: 10px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	outline: none;
+	font-size: 16px;
+	color: rgba(255, 255, 255, 1);
+	font-weight: 300;
+}
+.inputBox span {
+	font-family: 'Zen Dots', cursive;
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	padding: 10px;
+	display: inline-block;
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.6);
+	font-weight: 300;
+	transition: 0.5s;
+	pointer-events: none;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+	transform: translateY(-32px) translateX(-10px);
+	font-size: 14px;
+	color: rgba(255, 255, 255, 1);
+}
+.ostapchuk,
+.btn {
+	text-align: center;
+}
+.ostapchuk {
+	font-weight: 500;
+	border: 2px dashed black;
+	padding: 10px 30px;
+	margin-bottom: 30px;
+}
+a {
+	font-family: 'Zen Dots', cursive;
+	position: relative;
+	display: inline-block;
+	margin: 20px 0 10px;
+	padding: 15px 40px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.4);
+	background: #262c37;
+	letter-spacing: 2px;
+	font-weight: 20px;
+	font-size: 20px;
+	transition: 0.5s;
+}
+a:hover {
+	color: rgba(255, 255, 255, 1);
+}
+a span {
+	display: block;
+	position: absolute;
+	background: #2894ff;
+}
+a span:nth-child(1) {
+	left: 0;
+	bottom: 0;
+	width: 1px;
+	height: 100%;
+	transform: scaleY(0);
+	transform-origin: top;
+	transition: transform 0.5s;
+}
+a:hover span:nth-child(1) {
+	transform: scaleY(1);
+	transform-origin: bottom;
+	transition: transform 0.5s;
+}
+a span:nth-child(2) {
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.5s;
+}
+a:hover span:nth-child(2) {
+	transform: scaleX(1);
+	transform-origin: left;
+	transition: transform 0.5s;
+}
+a span:nth-child(3) {
+	right: 0;
+	bottom: 0;
+	width: 1px;
+	height: 100%;
+	transform: scaleY(0);
+	transform-origin: top;
+	transition: transform 0.5s;
+	transition-delay: 0.5s;
+}
+a:hover span:nth-child(3) {
+	transform: scaleY(1);
+	transform-origin: bottom;
+	transition: transform 0.5s;
+	transition-delay: 0.5s;
+}
+
+a span:nth-child(4) {
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 1px;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.5s;
+	transition-delay: 0.5s;
+}
+a:hover span:nth-child(4) {
+	transform: scaleX(1);
+	transform-origin: left;
+	transition: transform 0.5s;
+	transition-delay: 0.5s;
+}
+.box-color {
+	position: absolute;
+	top: 40%;
+	left: 15%;
+}
+.result {
+	position: absolute;
+	top: 40%;
+	right: 15%;
+}
+.box-color td {
+	border: 0px solid white;
+	padding: 20px;
+	text-align: center;
+	cursor: pointer;
+}
+.black {
+	background-color: black;
+}
+.gray {
+	background-color: gray;
+}
+.silver {
+	background-color: silver;
+}
+.white {
+	background-color: white;
+}
+.fuchsia {
+	background-color: fuchsia;
+}
+.purple {
+	background-color: purple;
+}
+.red {
+	background-color: red;
+}
+.maroon {
+	background-color: maroon;
+}
+.yellow {
+	background-color: yellow;
+}
+.olive {
+	background-color: olive;
+}
+.lime {
+	background-color: lime;
+}
+.green {
+	background-color: green;
+}
+.aqua {
+	background-color: aqua;
+}
+.teal {
+	background-color: teal;
+}
+.blue {
+	background-color: blue;
+}
+.navy {
+	background-color: navy;
+}
+td.active {
+	border: 2px solid #fff;
+}
